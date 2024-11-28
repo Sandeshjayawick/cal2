@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Sarvodaya Fusion Calendar 2024 </title>
+    <title>Interactive Calendar</title>
     <style>
         /* Global styles */
         * {
@@ -131,12 +131,13 @@
             font-size: 0.9rem;
             color: #333;
             font-weight: bold;
+            padding-left: 50px;
         }
 
         .footer a {
             color: #ec5a2a;
             text-decoration: none;
-            
+            font-weight: bold;
         }
 
         .footer a:hover {
@@ -227,7 +228,7 @@
     </div>
 
     <div class="footer">
-        2025 Calendar <a href="#">Download PDF</a>
+        2025 Calendar<br> <a href="#">Download PDF</a>
     </div>
 
     <div id="image-modal" class="modal">
@@ -272,13 +273,14 @@
                 name: "April",
                 image: "images/5.png",
                 specialDays: [
-                    { date: "25", description: "International Girls in ICT Day" },
+                    { date: "24", description: "International Girls in ICT Day" },
                 ]
             },
             {
                 name: "May",
                 image: "images/6.png",
                 specialDays: [
+                    { date: "11", description: "Mothers Day" },
                     { date: "17", description: "World Telecommunication and Information Society Day" },
                     { date: "31", description: "World Backup Day" }
                     
@@ -288,6 +290,7 @@
                 name: "June",
                 image: "images/7.png",
                 specialDays: [
+                    { date: "15", description: "Fathers Day" },
                     { date: "27", description: " Micro, Small and Medium-sized Enterprises Day (UN)" },
                     { date: "30", description: "Social Media Day" },
                     
@@ -297,7 +300,7 @@
                 name: "July",
                 image: "images/8.png",
                 specialDays: [
-                    { date: "14th", description: "World Youth Skills Day (UN) "},
+                    { date: "15th", description: "World Youth Skills Day (UN) "},
                     { date: "16th", description: "AI day"},
                     
                 ]
@@ -322,7 +325,7 @@
                 image: "images/11.png",
                 specialDays: [
                     { date: "1", description: "National Cybersecurity Awareness Month | World Childrens Day" },
-                    { date: "5", description: "Teachers Day" },
+                    { date: "6", description: "Teachers Day" },
                     { date: "29", description: "World Internet Day"},
                 ]
             },
@@ -339,7 +342,7 @@
                 image: "images/13.png",
                 specialDays: [
                     { date: "2", description: "World Computer Literacy Day" },
-                        
+                    { date: "1-7", description: "World Computer Science Education Week" },
                 ]
             }
         ];
@@ -389,20 +392,22 @@
 
         modalClose.addEventListener("click", () => {
             modal.style.display = "none";
-        });
+        })
 
         document.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft") {
         currentMonth = (currentMonth - 1 + months.length) % months.length;
         updateCalendar();
-        } else if (event.key === "ArrowRight") {
+    } else if (event.key === "ArrowRight") {
         currentMonth = (currentMonth + 1) % months.length;
         updateCalendar();
     }
-    });
+});
+        
 
         // Initial load
         updateCalendar();
+        
     </script>
 </body>
 </html>
