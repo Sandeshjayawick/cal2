@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Calendar</title>
+    <link rel="icon" href="images/favicon.ico.png">
+    <title>Sarvodaya Fusion  2025 Calendar</title>
     <style>
-        /* Global styles */
+       
         * {
             margin: 0;
             padding: 0;
@@ -222,7 +223,7 @@
         <div class="special-days">
             <h3>Special Days</h3>
             <ul id="special-days-list">
-                <!-- Special days will be dynamically added here -->
+                <!-- Special days will be  added here -->
             </ul>
         </div>
     </div>
@@ -248,7 +249,7 @@
                 name: "January",
                 image: "images/2.png",
                 specialDays: [
-                    { date: "4", description: " International Day of Education " },
+                    { date: "25", description: " International Day of Education ", link:"https://www.un.org/en/observances/education-day" },
                     { date: "28", description: " International data privacy day " },
                     
                 ]
@@ -256,15 +257,14 @@
             {
                 name: "February",
                 image: "images/3.png",
-                specialDays: [
-                { date: "14", description: "Valentine's Day" },
-                ]
+                
+                
             },
             {
                 name: "March",
                 image: "images/4.png",
                 specialDays: [
-                    { date: "08", description: "International Women's Day" },
+                    { date: "08", description: "International Women's Day",link:"https://www.un.org/en/observances/womens-day" },
                     
                     
                 ]
@@ -273,7 +273,7 @@
                 name: "April",
                 image: "images/5.png",
                 specialDays: [
-                    { date: "24", description: "International Girls in ICT Day" },
+                    { date: "24", description: "International Girls in ICT Day", link:"https://www.itu.int/women-and-girls/girls-in-ict/" },
                 ]
             },
             {
@@ -281,7 +281,9 @@
                 image: "images/6.png",
                 specialDays: [
                     { date: "11", description: "Mothers Day" },
-                    { date: "17", description: "World Telecommunication and Information Society Day" },
+                    { date: "17", description: "World Telecommunication and Information Society Day", link:"https://www.un.org/en/observances/telecommunication-day" },
+                    { date: "17", description: "World Internet Day" },
+
                     { date: "31", description: "World Backup Day" }
                     
                 ]
@@ -291,7 +293,7 @@
                 image: "images/7.png",
                 specialDays: [
                     { date: "15", description: "Fathers Day" },
-                    { date: "27", description: " Micro, Small and Medium-sized Enterprises Day (UN)" },
+                    { date: "27", description: " Micro, Small and Medium-sized Enterprises Day",link:"https://www.un.org/en/observances/micro-small-medium-businesses-day" },
                     { date: "30", description: "Social Media Day" },
                     
                 ]
@@ -300,7 +302,10 @@
                 name: "July",
                 image: "images/8.png",
                 specialDays: [
-                    { date: "15th", description: "World Youth Skills Day (UN) "},
+                    { date: "15th", description: "World Youth Skills Day (UN) ",
+                        link: "https://www.un.org/en/observances/world-youth-skills-day"
+                    },
+
                     { date: "16th", description: "AI day"},
                     
                 ]
@@ -310,23 +315,23 @@
                 image: "images/9.png",
                 specialDays: [
                     { date: "1", description: "World Wide Web Day" },
-                    { date: "12", description: "International Youth day" }
+                    { date: "12", description: "International Youth day",link:"https://www.un.org/en/observances/youth-day" }
                 ]
             },
             {
                 name: "September",
                 image: "images/10.png",
                 specialDays: [
-                    { date: "28", description: " International Day for Universal Access to Information" }
+                    { date: "28", description: " International Day for Universal Access to Information",link:'https://www.un.org/en/observances/information-access-day' }
                 ]
             },
             {
                 name: "October",
                 image: "images/11.png",
                 specialDays: [
-                    { date: "1", description: "National Cybersecurity Awareness Month | World Childrens Day" },
-                    { date: "6", description: "Teachers Day" },
-                    { date: "29", description: "World Internet Day"},
+                    { date: "1", description: "National Cybersecurity Awareness Month" },
+                    { date: "5", description: "Teachers Day" ,link:"https://www.unesco.org/en/days/teachers"},
+                
                 ]
             },
             {
@@ -334,7 +339,8 @@
                 image: "images/12.png",
                 specialDays: [
 
-                    { date: "21", description: "VR Day" }
+                    { date: "21", description: "VR Day" },
+                    { date: "20", description: "World Childrens Day",link: "https://www.un.org/en/observances/world-childrens-day"},
                 ]
             },
             {
@@ -342,7 +348,7 @@
                 image: "images/13.png",
                 specialDays: [
                     { date: "2", description: "World Computer Literacy Day" },
-                    { date: "1-7", description: "World Computer Science Education Week" },
+                    { date: "1-7", description: "World Computer ScienceEducation Week" },
                 ]
             }
         ];
@@ -362,8 +368,15 @@
             const current = months[currentMonth];
             current.specialDays.forEach(day => {
                 const listItem = document.createElement("li");
-                listItem.innerHTML = `<strong>${day.date}:</strong> ${day.description}`;
-                specialDaysList.appendChild(listItem);
+                if (day.link) {
+            listItem.innerHTML = `<strong>${day.date}:</strong> <a href="${day.link}" target="_blank" rel="noopener noreferrer">${day.description}</a>`;
+        } else {
+            listItem.innerHTML = `<strong>${day.date}:</strong> ${day.description}`;
+        }
+
+        specialDaysList.appendChild(listItem);
+
+
             });
         }
 
