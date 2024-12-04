@@ -26,6 +26,7 @@
                 image: "images/4.png",
                 specialDays: [
                     { date: "08", description: "International Women's Day",link:"https://www.un.org/en/observances/womens-day" },
+                    { date: "31", description: "World Backup Day" }
                     
                     
                 ]
@@ -45,7 +46,7 @@
                     { date: "17", description: "World Telecommunication and Information Society Day", link:"https://www.un.org/en/observances/telecommunication-day" },
                     { date: "17", description: "World Internet Day" },
 
-                    { date: "31", description: "World Backup Day" }
+                
                     
                 ]
             },
@@ -67,7 +68,7 @@
                         link: "https://www.un.org/en/observances/world-youth-skills-day"
                     },
 
-                    { date: "16th", description: "AI day"},
+                    { date: "16th", description: "World AI Day"},
                     
                 ]
             },
@@ -91,8 +92,11 @@
                 image: "images/11.png",
                 specialDays: [
                     { date: "1", description: "National Cybersecurity Awareness Month" },
+                    { date: "1", description: "Childrens Day"},
                     { date: "5", description: "Teachers Day" ,link:"https://www.unesco.org/en/days/teachers"},
-                
+                    { date: "11", description: "International Day of the Girl Child" ,link:"https://www.un.org/en/observances/girl-child-day"},
+                    { date: "24", description: "Teachers DayWorld Development Information Day" ,link:"https://www.un.org/en/observances/development-information-day"},
+                    
                 ]
             },
             {
@@ -102,6 +106,8 @@
 
                     { date: "21", description: "VR Day" },
                     { date: "20", description: "World Childrens Day",link: "https://www.un.org/en/observances/world-childrens-day"},
+
+
                 ]
             },
             {
@@ -109,7 +115,7 @@
                 image: "images/13.png",
                 specialDays: [
                     { date: "2", description: "World Computer Literacy Day" },
-                    { date: "1-7", description: "World Computer ScienceEducation Week" },
+                    { date: "1-7", description: "World Computer Science Education Week" },
                 ]
             }
         ];
